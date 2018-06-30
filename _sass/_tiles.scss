@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Tiles
+   ========================================================================== */
+
+.tile {
+  @include outer-container;
+  margin-bottom: $gutter;
+  @include media($micro) {
+    @include fill-parent;
+  }
+  @include media(new-breakpoint(min-width em(480) 12)) {
+    @include span-columns(3);
+    @include omega(4n);
+  }
+  .entry-date {
+    @include font-size(16,no);
+    color: lighten($text-color,25);
+  }
+  .post-title {
+    @include font-size(18,no);
+  }
+  .post-excerpt {
+    @include font-size(16);
+  }
+  span.text-content {
+    @include font-size(18,no);
+    background: rgba(0,0,0,0.5);
+    color:  white;
+    cursor: pointer;
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    span {
+      display: block;
+      text-align: left;
+      margin-left: 12px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+  }
+  .post-teaser {
+    position: relative;
+    display: block;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba($base-color,0);
+      pointer-events: none;
+      @include transition(background 0.3s);
+    }
+    &:hover span.text-content{
+      opacity: 1;
+      &:after {
+        background: rgba($base-color,0.2);
+      }
+    }
+  }
+}

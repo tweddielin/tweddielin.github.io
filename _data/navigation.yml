@@ -1,0 +1,35 @@
+# Site navigation links
+- title: Home
+  url: /
+  excerpt: "This is Eddie Lin's personal website."
+  image: navigation_image/me400x250.png
+
+- title: About
+  url: /about/
+  excerpt: "An engineer, traveler, maker, and musician."
+  image: navigation_image/jordan400x250.png
+
+- title: Project
+  url: /project/
+  excerpt: "Things I’ve designed, developed, coded, and whatever."
+  image: navigation_image/electronics400x250.png
+
+- title: Music
+  url: /music/
+  excerpt: "Some music I've made for short films and recordings."
+  image: navigation_image/synthesizer400x250.png
+
+- title: Adventure
+  url: /adventure/
+  excerpt: "Stories from a photography enthusiast traveler."
+  image: navigation_image/milkyway400x250.png
+
+- title: Blog
+  url: /blog/
+  excerpt: "Some notes."
+  image: navigation_image/wordcloud400x250.png
+
+- title: CV
+  url: /cv/
+  excerpt: "Cirrculum Vitae."
+  image: navigation_image/cv400x250.png

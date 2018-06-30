@@ -1,0 +1,24 @@
+# Footer navigation links
+
+- title: Home
+  url: /
+
+- title: About
+  url: /about/
+
+- title: Project
+  url: /project/
+
+- title: Music
+  url: /music/
+
+- title: Adventure
+  url: /adventure/
+
+- title: Blog
+  url: /blog/
+
+- title: CV
+  url: /cv/
+
+

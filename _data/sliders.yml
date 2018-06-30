@@ -1,0 +1,140 @@
+- selector: yellowstone_slider
+  bullets: true
+  captions: true
+  images:
+    - data-src: /images/advanture_image/yellowstone2017/DSC04749.jpg
+    - src: /images/advanture_image/yellowstone2017/DSC03857.jpg
+      title: Forests!
+      alt: This was somewhere in Grand Teton.
+    - data-src: /images/advanture_image/yellowstone2017/DSC03906.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC04090.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC04109.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC04122.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC04182.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC04234.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC04427.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC04722.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC04794.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC04803.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC04819.jpg
+    - data-src: /images/advanture_image/yellowstone2017/DSC03894.jpg
+      title: Girl and the Fall.
+      alt: Girl took selfie in front of the fall.
+    - src: /images/advanture_image/yellowstone2017/DSC04103.jpg
+      title: Last image had no caption!
+      alt: Also, this image has no link
+
+  settings:
+    height: "'auto'"
+    effect: "'fade'"
+    interval: 4000
+
+
+- selector: brisbane_slider
+  bullets: true
+  captions: true
+  images:
+    - data-src: /images/advanture_image/brisbane2015/DSC01391.jpg
+    - data-src: /images/advanture_image/brisbane2015/DSC01176.jpg
+    - data-src: /images/advanture_image/brisbane2015/DSC01217.jpg
+    - data-src: /images/advanture_image/brisbane2015/DSC01225.jpg
+    - data-src: /images/advanture_image/brisbane2015/DSC01302.jpg
+    - data-src: /images/advanture_image/brisbane2015/DSC01323.jpg
+    - data-src: /images/advanture_image/brisbane2015/DSC01354.jpg
+    - data-src: /images/advanture_image/brisbane2015/DSC01361.jpg
+    - data-src: /images/advanture_image/brisbane2015/DSC01381.jpg
+    - data-src: /images/advanture_image/brisbane2015/DSC01402.jpg
+
+  settings:
+    height: "'auto'"
+    effect: "'fade'"
+    interval: 4000
+
+- selector: sydney_slider
+  bullets: true
+  captions: true
+  images:
+    - data-src: /images/advanture_image/sydney2015/DSC00661.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00549.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00215.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00450.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00487.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00469.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00546.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00665.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00580.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00572.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00579.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00582.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00604.jpg
+    - data-src: /images/advanture_image/sydney2015/DSC00747.jpg
+
+  settings:
+    height: "'auto'"
+    effect: "'fade'"
+    interval: 4000
+
+- selector: newyork_slider
+  bullets: true
+  captions: true
+  images:
+    - data-src: /images/advanture_image/newyork2018/DSC05630.jpg
+      title: Night from Jersey
+    - data-src: /images/advanture_image/newyork2018/DSC05292.jpg
+      title: Day from Jersey
+    - data-src: /images/advanture_image/newyork2018/DSC03500.JPG
+      title: Crazy Time Square I
+    - data-src: /images/advanture_image/newyork2018/DSC03506.JPG
+      title: Crazy Time Square II
+    - data-src: /images/advanture_image/newyork2018/DSC05317.jpg
+      title: Stop
+    - data-src: /images/advanture_image/newyork2018/DSC05322.jpg
+      title: December in Manhattan
+    - data-src: /images/advanture_image/newyork2018/DSC05348.jpg
+      title: New York Bridge Collection I, Brooklyn Cliche
+    - data-src: /images/advanture_image/newyork2018/DSC05357.jpg
+      title: New York Bridge Collection II
+    - data-src: /images/advanture_image/newyork2018/DSC05360.jpg
+      title: New York Bridge Collection III
+    - data-src: /images/advanture_image/newyork2018/DSC05371.jpg
+      title: New York Bridge Collection IV
+    - data-src: /images/advanture_image/newyork2018/DSC05392.jpg
+      title: New York Bridge Collection V
+    - data-src: /images/advanture_image/newyork2018/DSC05408.jpg
+      title: Bar 55 I
+    - data-src: /images/advanture_image/newyork2018/DSC05410.jpg
+      title: Bar 55 II
+    - data-src: /images/advanture_image/newyork2018/DSC05442.jpg
+      title: Walking toward the library
+    - data-src: /images/advanture_image/newyork2018/DSC05482.jpg
+      title: Trumpet man at Mona's
+    - data-src: /images/advanture_image/newyork2018/DSC05483.jpg
+      title: Trumpet man and piano man
+    - data-src: /images/advanture_image/newyork2018/DSC05484.jpg
+      title: Trumpet man and bass man
+    - data-src: /images/advanture_image/newyork2018/DSC05486.jpg
+      title: Just piano man
+    - data-src: /images/advanture_image/newyork2018/DSC05491.jpg
+      title: Muted Trupet man and Vocalist
+    - data-src: /images/advanture_image/newyork2018/DSC05531.jpg
+      title: Trumpet man and the dancer
+    - data-src: /images/advanture_image/newyork2018/DSC05543.jpg
+      title: Sweet Meg
+    - data-src: /images/advanture_image/newyork2018/DSC05554.jpg
+      title: Piano man went crazy
+    - data-src: /images/advanture_image/newyork2018/DSC05564.jpg
+      title: Sax man at Zinc Bar
+    - data-src: /images/advanture_image/newyork2018/DSC05572.jpg
+      title: Sax men got bored
+    - data-src: /images/advanture_image/newyork2018/DSC05574.jpg
+      title: Eddie Allen on Trumpet
+    - data-src: /images/advanture_image/newyork2018/DSC05591.jpg
+      tittle: At Smalls
+    - data-src: /images/advanture_image/newyork2018/DSC05592.jpg
+      title: Bass orgasm
+    - data-src: /images/advanture_image/newyork2018/DSC05594.jpg
+      title: Piano man in black and white
+  settings:
+    height: "'auto'"
+    effect: "'fade'"
+    interval: 4000
