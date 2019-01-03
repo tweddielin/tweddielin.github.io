@@ -6,10 +6,10 @@
    Typography variables
    ========================================================================== */
 
-$base-font                   	: "Helvetica Neue","Segoe UI",Arial,sans-serif;/*Georgia,Times,"Times New Roman",serif;*/
-$heading-font                	: "Helvetica Neue","Segoe UI",Arial,sans-serif;
+$base-font                   	: 'Roboto Slab', serif;
+$heading-font                	: 'Roboto Slab', sans-serif;
 $caption-font                	: $base-font;
-$code-font                   	: monospace;
+$code-font                   	: 'Roboto Mono', monospace;
 $alt-font                    	: $heading-font;
 
 $doc-font-size               	: 16;

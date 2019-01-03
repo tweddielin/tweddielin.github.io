@@ -17,7 +17,7 @@ ads: false
 <figure>
 	<img src="{{ site.url }}/images/about_image/avatar.png" height="150" width="150">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="https://dl.dropboxusercontent.com/u/10578702/Eddie_Lin_CV_201608.pdf" class="btn-info">cirrculum_vitae.pdf</a>
+	<a href="https://www.dropbox.com/s/25w3va0co8ng0c0/Eddie_Lin_resume.pdf?dl=0" class="btn-info">cirrculum_vitae.pdf</a>
 </figure>
 <!--PDF Version: &nbsp;&nbsp;
 <a href="https://dl.dropboxusercontent.com/u/10578702/Eddie_Lin_CV_201512.pdf" class="btn-info">cirrculum_vitae.pdf</a>

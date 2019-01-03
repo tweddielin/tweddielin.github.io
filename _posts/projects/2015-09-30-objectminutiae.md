@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "ObjectMinutiae"
-date: 2015-09-30T23:14:02-04:00
+date: 2015-09-30
 modified:
 categories: project
 excerpt: A framework for authenticating different objects or materials via extracting and matching their fingerprints.

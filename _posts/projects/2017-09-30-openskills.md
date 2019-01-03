@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Open-Skills Porject"
-date: 2017-09-30T23:14:02-04:00
+date: 2017-09-30
 modified:
 categories: project
 excerpt: Create a new taxonomies of skills and jobs

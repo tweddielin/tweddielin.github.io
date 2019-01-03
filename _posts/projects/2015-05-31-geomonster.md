@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "GeoMonster"
-date: 2015-05-31T23:14:02-04:00
+date: 2015-05-31
 modified:
 categories: project
 excerpt: An interactive visualization system to analyze and predict urban construction dynamics.

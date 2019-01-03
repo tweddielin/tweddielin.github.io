@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Parameters Update in Deep Learning"
-date: 2016-02-21T23:14:02-04:00
+date: 2016-02-21
 modified:
 categories: blog
 excerpt: Comparison of three different techniques for updating parameters.
@@ -9,7 +9,7 @@ tags: [blog]
 ads: false
 image:
   feature:
-  teaser: navigation_image/wordcloud400x250.png
+  teaser: navigation_image/wordcloud400x400.png
 ---
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({

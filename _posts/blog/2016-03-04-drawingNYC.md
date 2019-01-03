@@ -1,16 +1,16 @@
 ---
 layout: article
 title: "Drawing NYC"
-date: 2016-03-04T23:14:02-04:00
+date: 2016-03-04
 modified:
 categories: blog
 excerpt: Using Bokeh + Geojson + Geopandas.
 tags: [blog]
 ads: false
-published: true
+published: false
 image:
   feature:
-  teaser: navigation_image/wordcloud400x250.png
+  teaser: navigation_image/wordcloud400x400.png
 ---
 
 #### Using Bokeh + Geojson + Geopandas

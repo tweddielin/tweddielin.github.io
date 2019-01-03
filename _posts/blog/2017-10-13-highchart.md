@@ -1,16 +1,16 @@
 ---
 layout: article
 title: "Highchart test"
-date: 2017-10-13T23:14:02-04:00
+date: 2017-10-13
 modified:
 categories: blog
 excerpt:
 tags: [blog]
 ads: false
-published: true
+published: false
 image:
   feature:
-  teaser: navigation_image/wordcloud400x250.png
+  teaser: navigation_image/wordcloud400x400.png
 ---
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
 </script>

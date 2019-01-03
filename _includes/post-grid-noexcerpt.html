@@ -1,6 +1,13 @@
 <article class="tile" itemscope itemtype="http://schema.org/Article">
   <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="post-teaser">
   	<img src="{{ site.url }}/images/{{ post.image.teaser }}" alt="teaser" itemprop="image" >
-  	<span class="text-content"><span><br><p1>#{{ post.categories }}</p1><br><br><p2>{{ post.title }}</p2><br><p4>{{ post.excerpt }}</p4></span></span>
+  	<span class="text-content">
+  		<span>
+  			<br><p4>{{post.date | date: "%m.%d.%Y"}}</p4>
+  			<br><p4>#{{ post.categories }}</p4>
+  			<br><br><p3>{{ post.title }}</p3>
+  			<br><p4>{{ post.excerpt }}</p4>
+  		</span>
+  	</span>
   </a>
 </article><!-- /.tile -->

@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Google Street View OCR"
-date: 2015-09-15T23:14:02-04:00
+date: 2015-09-15
 modified:
 categories: project
 excerpt: A Kaggle competition to identify characters from Google Street View Images.
