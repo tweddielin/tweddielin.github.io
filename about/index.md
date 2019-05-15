@@ -17,11 +17,7 @@ ads: false
 <!--  <i> “ Making the simple complicated is commonplace; making the complicated simple, awesomely simple, that's creativity. ” — Charles Mingus </i> -->
 
 
-I write codes, analyze data, make beats, and play music.
+I write codes, crunch data, make music, and take pics.
 
-I'm a traveller, currently based in Chicago, originally from Taiwan. Data and humanity are probably the main topics here, especially music and scoiety, but who knows. Maybe I'll write a poem or build a robot.
+I'm a restless soul, currently based in Chicago, originally from Taiwan. The topcis here are probably data, code, music, art and some random thoughts, but who knows. Maybe I'll write a poem or build a robot.
 
-
-
-
-It's actually really difficult for me to write this section. The frist version of this is something like I'm a data scientist working at blah blah blah. Gees, I'm not filling my LinkedIn profile or whatever application form. It's my blog. Even though it's been abandoned for a while (sigh), I made up my mind to keep it alive this time and just wrote this down before 2018 ends.
