@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Science From Engineering Point of View</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Ubuntu Mono'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .pull-left {
+        float: left;
+        width: 45%;
+      }
+      .crossed-out {
+        text-decoration: line-through;
+      }
+      .pull-right {
+        float: right;
+        width: 55%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      .footnote {
+        color: #f3f3f3;
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2, .inverse h3 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; font-size: 0.5em;}
+      .remark-code-line-highlighted     { background-color: #6c6e60; } 
+
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      .left-column {
+        color: #777;
+        width: 18%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child, .left-column h4:last-child {
+        color: #000;
+      }
+      .right-column {
+        width: 80%;
+        float: right;
+        padding-top: 0.5em;
+      }
+      .image-fit {
+        width: 50%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+# Data Science From An Engineering Point of View
+.footnote[Eddie Lin, Data Engineer@CrimeLab]
+
+???
+- Introduce myself. 
+- I worked with Adolfo at DSaPP in Chicago till he left us.
+- I'm from Taiwan, currently stuck in Chicago. 
+- Sad that I think I was supposed to be in Mexico.
+- Hope everyone is healthy there. 
+- My background is in Pysics and EE. Started my career as an engineer and kinda transition to data science after a year I worked at a startup company and
+attened DSSG.
+- The topic. A summary of my career or background. and we'll have a mini project
+---
+layout: false
+.left-column[
+  ### Engineering Point of View
+]
+.right-column[
+### When doing data science...
+- Business/Domain
+  - Problem solving
+
+  - Decision making process
+
+- Science
+  - Stats/Math/ML
+  
+  - Computer Science
+  
+  - Analytics
+
+- Communication
+  - Visualization
+  
+  - Presentation
+]
+???
+- A lot of things go to data science area and more and more.
+- Trendy and fancy and sexy.
+---
+template: inverse
+<img src="/slides/images/datascientist.png" width="100%">
+???
+- You probably have seen this meme already.
+- There are all kinda of imaginations of doing data science. 
+- In reality. we are just all typing on Jupyter Notebook right?
+---
+template: inverse
+<img src="/slides/images/jupyternotebook.png", width="80%">
+???
+- Please don't say yes. don't agree with that question.
+- There's madness in jupyter notebook
+- insane, hardly reproducible, barely able to automate, how to scale up
+---
+.left-column[
+  ### Engineering Point of View
+]
+.right-column[
+### When doing data science with engineer mindset
+- Reproducibility
+  - Version Control
+  
+  - Meta Data
+
+- Scalability
+  - Data Size 
+  
+  - Time and Memory Usage 
+  
+  - Parallelization 
+
+- Automation
+  - DAG
+  
+  - Pipeline
+]
+???
+- We care
+---
+template: inverse
+
+<img src="https://i.imgflip.com/2ajwi5.jpg" width="70%">
+???
+- If you write all your codes in the notebook
+- It's alright. We've all been there.
+---
+.left-column[
+  ### Engineering Point of View
+]
+.right-column[
+### When doing data science with ONLY Jupyter Notebook...
+.crossed-out[
+- Reproducibility
+  - Version Control
+  
+  - Meta Data
+
+- Scalability
+  - Data Size
+  
+  - Memory Usage
+  
+  - Parallelization
+
+- Automation
+  - DAG
+  
+  - Pipeline Tools
+  ]
+]
+???
+- It's always good to realize sooner than later.
+- Notebook is good for interactive stuff like EDA, data viz, interactive data anlaysis
+- Not for building Re.., Scal.., and Automated...
+- However, Jupyter notebook also improves over time.
+---
+template: inverse
+
+<img src="/slides/images/notebook_evil.png" width="100%">
+More memes from [I Don't Like Notebooks - Joel Grus](https://docs.google.com/presentation/d/10rWpdVtjhR70dPjhweboxWiFxojiO3H-ZwASwwWA_r4/edit?usp=sharing)
+???
+- Share state
+- What an evil functionality
+- Joel Grus's talks and works about engineering and data science with memes and gifs
+---
+.left-column[
+  ### Engineering Point of View
+]
+.right-column[
+.pull-left[
+### But why do we care?
+
+- Helps ensure robustness
+
+- Makes it easier to try new data
+
+- Makes it easier to try new tasks
+
+- Reduce technical debt over time 
+
+- Save time and effort for fun things
+
+- Able to build tools and products 
+
+]
+.pull-right[
+<img src="/slides/images/google_paper.png" width="120%">
+]
+]
+???
+- Let's be serious. Why do we care?
+- Google acutally have several papers talking about this. They see machine learning as a high interest credit card
+- ML offers a fantastically powerful toolkit for building coplex system quickly, but it's dangerous to think of these
+quick wins as coming for free. 
+- Every poor decision you make will increase some technical debt in the future.
+
+---
+.left-column[
+  ### Engineering Point of View
+]
+.right-column[
+### Things you might learn in this talk
+
+How to build a system?
+
+- Engineering Mindset
+
+- Data Science Components
+
+- Some Tools
+
+- Data Pipeline
+
+- Data Storage
+
+- Deployment
+]
+---
+.left-column[
+  ### Engineering Point of View
+]
+.right-column[
+### Things you won't learn in this talk
+
+- Trendy ML, DL Algorithms
+
+- Fancy Big Data Tools
+
+]
+---
+template: inverse
+
+<img src="https://media.giphy.com/media/4TtTVTmBoXp8txRU0C/giphy.gif" width="80%">
+
+???
+- First of all. We know a lot of engineering/software engineering is about automation.
+---
+.left-column[
+  ### Engineering Point of View
+]
+.right-column[
+### Automated System 
+
+- Automated machine learning
+  - the automated optimization of feature engineering and/or selection
+  - hyperparameter tuning
+
+- Automated data science
+  - Hard to do without human in the loop
+
+<img src="/slides/images/auto_ml.png" width="100%" height="auto">
+
+https://www.kdnuggets.com/2018/07/automated-machine-learning-vs-automated-data-science.html
+]
+???
+- It's the main thing everyone is trying to build and argue on nowadays. So many companies...
+- We can probably say that there is automated ml and there is automated ds
+- Traditionally we'll have a lot of iterative works back and forth going on around red boxes
+---
+template: inverse
+
+### So we want to build a system that will find the best machine learning model by hyperparameter tuning. 
+### We want it to be able to generalize to most of the classification problems. 
+### We want the ability to automate the whole process but also keep human in the loop. 
+### We want to reproduce any result easily. 
+### We want to preserve all the metat data generated.
+### We want to visualize the process.
+
+https://github.com/tweddielin/luigi-ml-service
+???
+- Mini Porject
+- Think of some solution of building this system
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+]
+.right-column[
+
+### Components of An Experiment
+
+Building a system to run experiments efficiently to get the results and insights.
+
+Components
+  - ETL
+  - Processing
+  - Storage
+  - ML
+  - Deployment
+  - ...
+
+<img src="/slides/images/pipeline.png" width="90%" height="auto">
+
+## What tools should I use?
+]
+???
+- This type of system is essentially some kind of experimenting tool
+- Roughly like this
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+]
+.right-column[
+<img src="/slides/images/big_data_tools.png" width="100%">
+## How to build?
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+]
+.right-column[
+### Think engineering
+  - define the problem 
+
+  - find constraints
+
+  - research and brainstorm
+
+  - find possible solutions
+  
+  - build a prototype
+  
+  - test and evaluate
+  
+  - improve and redesign
+]
+---
+template: inverse
+## Data Pipeline
+<img src="https://media.giphy.com/media/1bqWJ6PDfW5os/giphy.gif" width="50%">
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+
+.right-column[
+### What? Why?
+
+- How to orchestrate different components?
+- Data move between different tasks(systems) in different formats
+
+- Why do we need data pipeline?
+  - Modularization
+  - Standardization
+  - Automation
+  - Reproducibility
+  - Scalability
+  - Monitoring
+
+- Essentially, a data pipeline is to handle different simple/complicated dependency task graphs or DAGs
+  
+  - ETL
+  - ML
+  - Analysis
+
+]
+???
+- data pipeline forces to right modular codes
+- standardize:We can have strong baseline of performance. Try new technology
+- 
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+
+.right-column[
+### DAG
+- Directed Acyclic Graph
+- Everything is a DAG
+- A graph means a finite set of nodes (dots) and vertices (lines) connecting them. When it comes to a DAG, the nodes each represent a data processing task.
+
+
+<img src="/slides/images/crime_dag.png" width="100%" height="auto">
+#### DAG for Homelessness and Criminal Justice Analysis
+]
+
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+
+.right-column[
+<img src="/slides/images/accn_dag.png" width="60%">  DAG for ETL + ML
+]
+---
+template: inverse
+# Tools
+<img src="https://media.giphy.com/media/3oKIPqsXYcdjcBcXL2/giphy.gif">
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+
+.right-column[
+### Tools
+
+- Workflow Management System(WMS), Workflow Orchestration
+  - GNU Make
+  - Luigi
+  - Airflow
+  - Dagster
+  - MetaFlow
+  - Perfect
+  - ...
+
+- Infrastructure agnostic e.g. R, Python, Spark, Postgres, Hadoop...
+
+- All the tools are trying to make our life easier for designing, running, and managing our pipelines(DAGs).
+
+
+<img src="/slides/images/gnumake-logo.svg" width="10%">
+<img src="/slides/images/luigi-logo.png" width="15%">
+<img src="/slides/images/airflow-logo.png" width="20%">
+<img src="/slides/images/dagster-logo.png" width="10%">
+<img src="/slides/images/metaflow-logo.png" width="22%">
+<img src="/slides/images/prefect-logo.png" width="10%">
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+
+.right-column[
+### GNU Make - Was the workflow problem solved once and for all in 1979?
+
+- Comes in almost any unix-like system 
+
+- GNU Make is a tool which controls the generation of executables and other non-source files of a program from the program's source files.
+
+- File-based dependency-tracking system makes it a candidate for building data pipeline.
+
+- It wasn’t designed for modern data science/analysis.
+
+Pros
+- Easy setup 
+- File-based dependency-tracking system is intuitive
+- Easy and everyone has already learned it...really?
+
+Cons
+- Can not have dynamic number of output
+- Can not deal with combinational dependencies
+- Can not change the behavior 
+- Hard to parameterize tasks
+- Hard to scale up
+- No dashboard
+]
+
+???
+In it’s official doc, GNU Make is a tool which controls the generation of executables and other non-source files of a program from the program's source files.
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+
+.right-column[
+Makefile Example
+```make
+YEARS ?= 2014 2015 2016 2017 2018 2019
+
+raw_data_dir_template := $(RAW_HPSA_DIR)/%yr
+raw_dirs = $(foreach year,$(YEARS), $(shell echo $(raw_data_dir_template) | sed -e 's/%yr/$(year)/g'))
+
+*# kind of hacky thing to concatenate list of input files into single string
+*# TODO: see if there is a better way to pass list as an arg
+EMPTY :=
+SPACE := $(EMPTY) $(EMPTY)
+
+define process_file_template
+$(eval file_name := $1)
+$(eval output_file_name := $(shell echo $(file_name) | sed -e 's/csv/pkl/g'))
+
+$(eval output_file := $(OUTPUT_DIR)/$(output_file_name))
+target_list += $(output_file)
+
+$(eval input_files := $(foreach dir,$(raw_dirs), $(shell echo $(dir)/$1)))
+$(eval input_files_str := $(subst $(SPACE),:,$(input_files)))
+
+$(output_file): $(SRC_DIR)/clean.py $(input_files) $(config_file)
+  - mkdir -p $(OUTPUT_DIR)
+  - rm -f $(output_file)
+  - time python $(SRC_DIR)/clean.py \
+      --input_files=$(input_files_str) \
+      --output_file=$(output_file) \
+      --lookup_path=$(lookup_tables_dir) \
+      --config_file=$(config_file) 
+endef
+
+input_files := A.csv B.csv C.csv D.csv
+$(foreach file,$(input_files), $(eval $(call process_file_template,$(file))))
+
+.DEFAULT_GOAL = all
+
+all: $(target_list)
+
+clean:
+  rm -rf $(CURRENT_DIR)/output
+```
+]
+???
+- this is grabbed from someone's code at work. credential information is scribbled. 
+- Look at the comment here...
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+
+.right-column[
+### Luigi = GNU Make + Unix pipes + Steroids
+- From Spotify, open-sourced in 2013, inspired by GNU Make
+
+- Task-based dependency tracking system.
+
+- Highly flexible. It relies only on Python.
+
+- Small overhead for a task (4 lines: class, requires, output, run).
+
+- Command line integration.
+
+Pros
+- Minimalistic dependency management like Make
+- Organize code with shared patterns. Build complex DAGs easily.
+- Parameters as constructor for a task.
+- Central Scheduler and Visualization Tool
+- Storage and compute engine integrations e.g. AWS, GCP, Postgres...
+- Idempotency. Completed tasks are not run twice, so a failed workflow can be restarted from the middle.
+
+Cons
+- Focus on batch processing other than real time processing
+- Does not have built-in triggering
+- Simple dashboard with limited functionalites
+
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Luigi's two building blocks
+
+- luigi.Task
+  - A unit of work
+
+  - Performs computations and consumes targets generated by other tasks.
+
+- luigi.Target
+  - An abstraction usually opuput by a task
+
+  - Can be a file on the local filesystem, on Amazon S3, or in a database...
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Task
+.pull-left[
+<img src="/slides/images/luigi_task.png" width="100%">
+]
+.pull-right[
+```python
+class BuildMatrix(luigi.Task):
+    id = luigi.Parameter()
+
+    def run(self):
+        redis_conn = redis_connect()
+        df = pd.read_msgpack(redis_conn.get("data"))
+        df.drop('salary', axis=1, inplace=True)
+        cat_feats = [
+            'gender',
+            'ssc_b',
+            'hsc_b',
+            'hsc_s',
+            'degree_t',
+            'workex',
+            'specialisation'
+        ]
+        df_transformed = encoding_cat_feats(df, cat_feats)
+        df_transformed['status'] = (df_transformed['status'] == 'Placed').astype(int)
+
+        serialized_matrix = df_transformed.to_msgpack(compress='zlib')
+        redis_conn.set('matrix', serialized_matrix)
+
+    def output(self):
+        return [NewRedisTarget(
+        host=RedisConfig().host, 
+        port=6379, 
+        db=0, 
+        update_id=f"matrix")]
+
+    def requires(self):
+        return LoadData(
+            id=self.id,
+        )
+```]
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Target
+
+<img src="/slides/images/luigi_target.png" width="60%">
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Luigi Dashboard
+
+<img src="/slides/images/luigi_dag.png" width="105%">
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Airflow
+- From Airbnb, open-sourced in 2015.
+
+- Task-based dependency tracking system.
+
+- Easy-to-use user interface. Rich features.
+
+- Really good for ETL or regular data service jobs in production.
+
+Pros
+- Powerful visualization dashboard
+- Built-in triggering mechanism  
+- Supports all kinds of infrastructures
+- Stable and strong community support
+
+Cons
+- Complicated setup
+- Not intuitive design pattern
+- Steep learning curve
+- Lesser flexibility
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Airflow Dashboard
+<img src="/slides/images/geocode_dags.png" width="100%">
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Airflow Dashboard - Tree View & Graph View
+
+<img src="/slides/images/geocode_graph.png" width="100%">
+
+<img src="/slides/images/geocode_tree.png" width="100%">
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Geocoding Service
+```python
+# Create the DAG
+with DAG(dag_id=f'geocode_sensor_demo_dag',
+         schedule_interval=timedelta(minutes=1),
+         catchup=False,
+         max_active_runs=1,
+         default_args=args) as dag:
+
+    # Sense if there is file in the folder with certain pattern
+*   sensor_task = RegexFileSensor(
+*       task_id='file_sensor_geocode_task',
+*       filepath=files_to_sense_path,
+*       filepattern=r'\w+.csv',
+*       poke_interval=60)
+
+    # Create downstream task for processing each file
+    for i, f in enumerate(os.listdir(files_to_sense_path)):
+        prefix = f.split('.')[0]
+*       geocode_task = PythonOperator(
+*           task_id=f"process_file_{prefix}",
+*           provide_context=True,
+*           python_callable=geocode,
+*           op_kwargs={'filename': f}
+        )
+*       archive_task = ArchiveFileOperator(
+*           task_id=f"archive_file_{prefix}",
+*           filepath=os.path.join(files_to_sense_path, f),
+*           archivepath=os.path.join(files_to_archive_path, f)
+        )
+
+*       trigger = TriggerDagRunOperator(
+*           task_id='trigger_dag_run',
+*           trigger_dag_id="geocode_demo_dag"
+        )
+    # create dependencies
+*       sensor_task >> geocode_task >> archive_task >> trigger
+
+
+```
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Mini Project  
+
+github repo link: https://github.com/tweddielin/luigi-ml-service
+
+Goal: Walk through this project to talk about problems and decision-making points that we might encounter during the development.
+
+Not covering
+- Version Control
+- ETL
+- Application
+
+Implement the system with the minimum variety of tools (MVP)
+  - Python
+     - Luigi
+     - Pandas
+     - Scikit-learn
+  - Postgres
+  - Redis
+  - Docker
+
+Of course you heard about Spark, Hadoop, Airflow, Dagster, Tensorflow, PyTorch...
+
+We want to design a system that we can integrate all of them or at least only have to make little change to use them later
+
+]
+???
+- Thanks Adolfo again for this talk, so that I can be more motivated to spend some time working on this repo
+- this is something I've wanted to put together after all the data projects I've worked on
+- this repo is not a one time thing. 
+---
+template: inverse
+
+### So we want to build a system that will find the best machine learning model by hyperparameter tuning. 
+### We want it to be able to generalize to most of the classification problems. 
+### We want the ability to automate the whole process but also keep human in the loop. 
+### We want to reproduce any result easily. 
+### We want to preserve all the metat data generated.
+### We want to visualize the process.
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### System Architecture
+<img src="/slides/images/system_no_sol.png" width="90%">
+- 3 major tasks: load data, build matrix and cross-validation
+- What if one of the tasks failed, do we have to rerun the whole thing? 
+- Can we train 1000+ models all at once? Parallelization?
+- How do we store data and intermediates?
+- Can some random person easily set up the whole thing and go?
+- Can it be re-usable?
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### System Architecture
+<img src="/slides/images/system.png" width="90%">
+
+One solution:
+- Luigi: Orchestrate the DAGs
+- Redis: Store matrix and temporary artifacts as a caching layer
+- Postgres: Store meta data for further model selection and analysis
+- Docker: Deploy and containerize the whole thing and be ready to ship.
+
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Demo Time
+
+Machine Learning Problem
+- Build a model to predict if a student will get a job
+- Campus Recruitment Data: https://www.kaggle.com/benroshan/factors-affecting-campus-placement
+- 1 data source, 200+ rows and 14 variables
+
+What this systme does?
+  - Configure the grid, hyperparameters, and settings of an experiment
+  - Perform k-fold cross-validation
+  - Store the results and model metatdata in the database
+<!-- # It's model and data agnostic! -->
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+]
+.right-column[
+### Config File
+.pull-left[
+Input of an experiment
+  - Grid search
+  - Feature selection
+  - Performance metrics
+  - Label
+  - Cross-Validation 
+]
+.pull-right[
+```yaml
+grid_config:
+    sklearn.ensemble.RandomForestClassifier:
+        n_estimators: [100, 300, 500]
+        criterion: [gini]
+        max_depth: [5, 10, 20, 30]
+        max_features: [sqrt, log2, 1.0]
+        min_samples_split: [5, 10, 15]
+        n_jobs: [2]
+    sklearn.tree.DecisionTreeClassifier:
+        max_depth: [1, 2]
+        # min_samples_split: [5, 10, 20]
+    sklearn.neural_network.MLPClassifier:
+        activation: ['tanh', 'relu', 'logistic']
+        alpha: [0.0001, 0.001, 0.01]
+
+feature_config:
+    drop_columns: [salary]
+    cat_feats: [gender, ssc_b, hsc_b, hsc_s, degree_t, workex, specialisation]
+
+evaluation_config:
+    metrics: [precision@, recall@, roc_auc]
+    parameters: [10, 20, all]
+
+label_config:
+    label_column: [status]
+    label_value: [Placed]
+
+basic_config:
+  k_fold: 3
+  data_path: placement_data_full_class.csv
+  random_sample: False
+  sample_n: 50
+```
+]
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+  #### Load Data
+]
+
+.right-column[
+.pull-left[
+### Load Data
+
+Load the data into cache
+
+Big data low memory issues
+  - Lazy evaluation
+  - Load in batch
+  - Random sampling
+
+Redis caching layer
+  - Reduce I/O operation
+  ]
+.pull-right[
+```python
+class LoadData(luigi.Task):
+    id = luigi.Parameter()
+    basic_config = luigi.DictParameter()
+
+    @property
+    def data_path(self):
+        return self.basic_config['data_path']
+
+    def run(self):
+        # Read and sample with lazy evaluation
+        reader = read_csv(self.data_path)
+        if self.basic_config['random_sample']:
+            sampler = reservoir(reader, self.basic_config['sample_n'])
+            df = pd.DataFrame(sampler)
+        df = pd.DataFrame(reader)
+        # dfs = []
+        # for df in pd.read_csv(path, chunksize=100):
+        #     dfs.append(df)
+        # df = df.concat(dfs)
+        redis_conn = redis_connect()
+        serialized_data = df.to_msgpack(compress='zlib')
+        redis_conn.set('data', serialized_data)
+
+    def output(self):
+        return NewRedisTarget(
+            host=RedisConfig().host,
+            port=6379,
+            db=0,
+            update_id=f"data")
+
+def read_csv(path):
+    with open(path) as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            row = dict(row)
+            new_row = {}
+            for k, v in row.items():
+                try:
+                    new_row[k] = ast.literal_eval(v)
+                except:
+                    if v == '':
+                        v = np.nan
+                    new_row[k] = v
+            yield new_row
+
+def reservoir(it, k):
+    it = iter(it)
+    result = []
+    for i, datum in enumerate(it):
+        if i < k:
+            result.append(datum)
+        else:
+            j = random.randint(0, i-1)
+            if j < k:
+                result[j] = datum
+    while len(result) > 0:
+        yield result.pop()
+
+```
+]
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+  #### Load Data
+  #### Build Matrix
+]
+.right-column[
+### Build Matrix
+.pull-left[
+Build the matrix and store into cache
+
+Feature engineering
+  - Different encoding techniques
+  - Different vectorization methods]
+.pull-right[
+```python
+class BuildMatrix(luigi.Task):
+    id = luigi.Parameter()
+    cat_feats = luigi.ListParameter()
+    label_column = luigi.Parameter()
+    label_value = luigi.Parameter()
+    drop_columns = luigi.ListParameter()
+    basic_config = luigi.DictParameter()
+
+    def run(self):
+        redis_conn = redis_connect()
+        df = pd.read_msgpack(redis_conn.get("data"))
+
+        df.drop(list(self.drop_columns), axis=1, inplace=True)
+        df_transformed = encoding_cat_feats(df, self.cat_feats)
+        df_transformed[self.label_column] = (
+          df_transformed[self.label_column] == self.label_value
+        ).astype(int)
+
+        serialized_matrix = df_transformed.to_msgpack(compress='zlib')
+        redis_conn.set('matrix', serialized_matrix)
+
+    def output(self):
+        return NewRedisTarget(
+          host=RedisConfig().host, 
+          port=6379, 
+          db=0, 
+          update_id=f"matrix")
+
+    def requires(self):
+        return LoadData(
+            id=self.id,
+            basic_config=self.basic_config,
+        )
+```
+]
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+  #### Load Data
+  #### Build Matrix
+  #### Train Test Split
+]
+
+.right-column[
+.pull-left[
+### Train Test Split
+We are performing K-fold cross-validation
+  - Cut the matrix in K folds 
+  - Store the indices
+  - Each fold has an ID
+
+luigi.WrapperTask
+  - No outputs
+  - For visualization purpose  
+ 
+]
+.pull-right[
+```python
+class TrainTestSplit(luigi.Task):
+    id = luigi.Parameter()
+    cat_feats = luigi.ListParameter()
+    label_column = luigi.Parameter()
+    label_value = luigi.Parameter()
+    drop_columns = luigi.ListParameter()
+    basic_config = luigi.DictParameter()
+
+    @property
+    def k_fold(self):
+        return self.basic_config['k_fold']
+
+    def run(self):
+        redis_conn = redis_connect()
+        df = pd.read_msgpack(redis_conn.get("matrix"))
+        cv = KFold(n_splits=self.k_fold, random_state=1, shuffle=True)
+        for i, indices in enumerate(cv.split(df)):
+            train_index, test_index = indices
+            index_dict = {
+              'train_index': train_index.tolist(), 
+              'test_index': test_index.tolist()
+            }
+            redis_conn.set(f"fold_id:{i}", json.dumps(index_dict))
+
+    def output(self):
+        return [NewRedisTarget(
+          host=RedisConfig().host, 
+          port=6379, 
+          db=0, 
+          update_id=f"fold_id:{x}") for x in range(self.k_fold)]
+
+    def requires(self):
+        return BuildMatrix(
+            id=self.id,
+            cat_feats=self.cat_feats,
+            label_column=self.label_column,
+            label_value=self.label_value,
+            drop_columns=self.drop_columns,
+            basic_config=self.basic_config,
+        )
+
+class Fold(luigi.WrapperTask):
+    id = luigi.IntParameter()
+    fold_id = luigi.Parameter()
+    cat_feats = luigi.ListParameter()
+    label_column = luigi.Parameter()
+    label_value = luigi.Parameter()
+    drop_columns = luigi.ListParameter()
+    basic_config = luigi.DictParameter()
+
+    def requires(self):
+        return TrainTestSplit(
+            id=self.id,
+            cat_feats=self.cat_feats,
+            basic_config=self.basic_config,
+            label_column=self.label_column,
+            label_value=self.label_value,
+            drop_columns=self.drop_columns,
+        )
+
+```
+]
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+  #### Load Data
+  #### Build Matrix
+  #### Train Test Split
+  #### Model and Evaluate
+]
+.right-column[
+.pull-left[
+### Model and Evaluate
+
+- Get train/test matrix
+
+- Train and evaluate the model
+
+- Store model meta data and metrics into Postgres
+
+- Where the parallelization is so important
+
+]
+.pull-right[
+```python
+class ModelAndEvaluate(DBCredentialMixin, luigi.Task):
+    id = luigi.Parameter()
+    class_path = luigi.Parameter()
+    params = luigi.DictParameter()
+    evaluation_config = luigi.DictParameter()
+    label_column = luigi.Parameter()
+    label_value = luigi.Parameter()
+    fold_id = luigi.IntParameter()
+    cat_feats = luigi.ListParameter()
+    drop_columns = luigi.ListParameter()
+    basic_config = luigi.DictParameter()
+
+    @cachedproperty
+    def train_test_index_dict(self):
+        redis_conn = redis_connect()
+        index_dict = json.loads(redis_conn.get(f"fold_id:{self.fold_id}"))
+        return index_dict
+
+    def run(self):
+        .
+        .
+        .
+*       module_name, class_name = self.class_path.rsplit(".", 1)
+*       module = importlib.import_module(module_name)
+*       cls = getattr(module, class_name)
+*       instance = cls(**self.params)
+*       instance.fit(train_data, train_labels)
+
+        ev = Evaluations(test_matrix=test, model=instance)
+        .
+        .
+        .
+        with scoped_session(self.db_engine) as session:
+*            target = RowPostgresTarget(
+*               host=self.host,
+*               database=self.database,
+*               user=self.user,
+*               password=self.password,
+*               table="results.models",
+*               column_name="model_uuid",
+*               update_id=self.model_uuid)
+
+            if not target.exists():
+                row_model = Model(
+*                   model_uuid=result['model_uuid'],
+*                   class_path=result['class_path'],
+*                   hyperparameters=result['parameters'],
+*                   feature_importance=result['feature_importance'],
+*                   train_index=result['train_index'],
+*                   label_column=result['label_column'],
+*                   train_base_number=result['train_base_number'],
+*                   train_total_number=result['train_total_number'],
+*                   model_group_id=result['model_group_id'],
+*                   k_fold=result['k_fold'],
+                )
+                session.add(row_model)
+          .
+          .
+          .
+
+```
+]
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+  #### Load Data
+  #### Build Matrix
+  #### Train Test Split
+  #### Model and Evaluate
+  #### Model Metadata
+]
+.right-column[
+### Model Metadata
+.pull-left[
+- Or result schema
+
+- It's an art
+
+- Sqlalchemy is useful to design data model
+
+- Good post-modeling analyisis depends on good result schema design
+]
+.pull-right[
+```python
+class Model(Base):
+    __tablename__ = "models"
+    __table_args__ = {"schema": "results"}
+
+    model_uuid = Column(String, primary_key=True)
+    class_path = Column(String)
+    hyperparameters = Column(JSON)
+    feature_importance = Column(JSON)
+    train_index = Column(ARRAY(Integer))
+    train_base_number = Column(Integer)
+    train_total_number = Column(Integer)
+    label_column = Column(String)
+    model_group_id = Column(String)
+    k_fold = Column(Integer)
+
+class Evaluation(Base):
+    __tablename__ = "evaluation"
+    __table_args__ = {"schema": "results"}
+
+    evaluation_id = Column(String, primary_key=True)
+    model_uuid = Column(String, ForeignKey("results.models.model_uuid"))
+    model_group_id = Column(String)
+    test_base_number = Column(Integer)
+    test_total_number = Column(Integer)
+    test_index = Column(ARRAY(Integer))
+    label_column = Column(String)
+    metric = Column(String)
+    parameter = Column(String)
+    value = Column(Numeric)
+    k_fold = Column(Integer)
+
+    model_rel = relationship("Model")
+```
+]
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+  #### Load Data
+  #### Build Matrix
+  #### Train Test Split
+  #### Model and Evaluate
+  #### Model Metadata
+  #### Deployment
+]
+.right-column[
+.pull-left[
+### Deployment
+
+Docker
+- Fancy
+- Lightweight virtual machine
+- Reproducibility
+- Portability of the compute env
+- Scalability (Deploy on a cluster)
+
+
+Dockerfile: 
+  - A recipe for creating an image.
+
+docker-compose: 
+  - A tool for defining and running multi-container Docker applications.
+]
+.pull-right[
+```bash
+# Dockerfile
+FROM python:3.7-slim
+
+RUN apt-get update -y && \
+        apt-get install -y --no-install-recommends gnupg2 wget && \
+        wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
+        echo "deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main" | tee  /etc/apt/sources.list.d/pgdg.list && \
+        apt-get update -y && \
+        apt-get install -y --no-install-recommends postgresql-client-12
+
+COPY . /app
+
+WORKDIR /app
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 9091
+
+CMD ["luigid", "--port=9091"]
+
+```
+```bash
+# docker-compose.yaml
+version: '3'
+
+services:
+    postgres:
+        container_name: luigi_db
+        image: postgres:10
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_DB=luigid
+            - POSTGRES_USER=luigid
+            - POSTGRES_HOST_AUTH_METHOD=trust
+    luigi_service:
+        container_name: luigi_service
+        build: .
+        ports:
+            - 9091:9091
+        volumes:
+            - '.:/app'
+        depends_on:
+            - postgres
+            - redis
+    redis:
+        image: redis
+        ports:
+            - 6379:6379
+```
+]
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+  ### Conclustion
+]
+.right-column[
+### What else can we improve?
+
+  - Implement leave-one-in, leave-one-out
+
+  - Implement more metrics
+
+  - Automate the model selection 
+  
+  - Generate the prediction list
+
+  - WRITE UNITTESTS!!!
+]
+---
+.left-column[
+  ### Engineering Point of View
+  ### Experiments
+  ### Data Pipeline
+  ### Conclustion
+]
+.right-column[
+### What did we learn?
+
+- A data/model agnostic machine learning system and flexible to integrate with other technologies
+
+- Reproducibility, scalability and automation
+
+- Some tools
+
+- Some concepts
+
+- DON'T USE ONLY NOTEBOOK TO DO DATA SCIENCE!
+
+]
+---
+.left-column[
+## Question?
+]
+.right-column[
+#### Eddie Lin
+
+##### Data Engineer @ CrimeLab 
+
+ <img src="/slides/images/crimelab_logo.png" width="20%">  <img src="/slides/images/dssg_logo.png" width="20%"> 
+
+tweddielin@gmail.com
+
+github.com/tweddielin
+
+soundcloud.com/tweddielin
+
+medium.com/@tweddielin
+]
+???
+Welcome collaboration
+---
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        ratio: '16:9',
+        highlightStyle: 'monokai',
+        highlightLanguage: 'remark',
+        highlightLines: true
+      });
+    </script>
+  </body>
+</html>
