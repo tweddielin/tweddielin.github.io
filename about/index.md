@@ -19,5 +19,3 @@ ads: false
 
 I write codes, crunch data, make music, and take pics.
 
-I'm a restless soul, currently based in Chicago, originally from Taiwan. The topcis here are probably data, code, music, art and some random thoughts, but who knows. Maybe I'll write a poem or build a robot.
-

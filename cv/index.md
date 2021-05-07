@@ -17,14 +17,14 @@ ads: false
 <figure>
 	<img src="{{ site.url }}/images/about_image/avatar.png" height="150" width="150">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="https://www.dropbox.com/s/25w3va0co8ng0c0/Eddie_Lin_resume.pdf?dl=0" class="btn-info">cirrculum_vitae.pdf</a>
+	<a href="https://drive.google.com/file/d/12mxrmPuOyTThl_6A9M4ZKHcpJpUASJeW/view?usp=sharing" class="btn-info">cirrculum_vitae.pdf</a>
 </figure>
 <!--PDF Version: &nbsp;&nbsp;
 <a href="https://dl.dropboxusercontent.com/u/10578702/Eddie_Lin_CV_201512.pdf" class="btn-info">cirrculum_vitae.pdf</a>
 -->
-
+<!--
 |<font size="5" face="Helvetica Neue"><strong>Experience</strong></font>|
-| 2016 Oct - Present | **Center for Data Science & Public Policy, University of Chicago** <br /> *Data Scientist* <br /> Working with government agencies and non-profit partners on various data science for social good projects, and building internal tools and data-driven system. |
+| 2016 Oct - 2019 Oct | **Center for Data Science & Public Policy, University of Chicago** <br /> *Data Scientist* <br /> Working with government agencies and non-profit partners on various data science for social good projects, and building internal tools and data-driven system. |
 | 2016 May - 2016 Sept | **Data Science for Social Good Fellowship, University of Chicago** <br /> *Data Science Fellow* <br /> In partner with Johnson County Kansas, built an early warning system to identify frequent users of multiple public systems for early intervention by using machine learning and data science. |
 | 2015 - 2016 | **Falcota Technology Inc., Taipei** <br /> *Junior Data Scientist* <br /> Developed a model to successfully classify 95% of the healthy persons and the patients with Obstructive Sleep Apnea with EKG and SpO2 time series.|
 | 2014 - 2015 | **Research Center for IT Innovation, Academia Sinica** <br /> *Research Assistant, Multimedia & Machine Learning Lab, Adviser: Dr. Yu-Chiang Frank Wang* <br /> Conducted individual research on object fingerprint by image feature descriptors, photometric stereo, and texture recognition. Also did surveys on image processing via machine learning and deep neural network.|
@@ -65,4 +65,4 @@ ads: false
 | **Prototyping Tools** | AVR, Arduino, Raspberry Pi, Processing, Altium Designer, PCB design layout and fabrication |
 | **Design Tools** | OpenSCAD, openFrameworks |
 | **Fluent Languages** | Mandarin, English |
-
+-->
